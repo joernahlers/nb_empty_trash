@@ -34,12 +34,12 @@ def _jupyter_nbextension_paths():
 class DeleteTrash(IPythonHandler):
     def delete(self):
         config = self.settings["trash_display_config"]
-        if os.path.isdir(config.trash_dir+"/files"):
-            for f in os.listdir(config.trash_dir+"/files"):
-                shutil.rmtree(config.trash_dir+"/files/"+f)
-        if os.path.isdir(config.trash_dir+"/info"):
-            for f in os.listdir(config.trash_dir+"/info"):
-                shutil.rmtree(config.trash_dir+"/info/"+f)
+        if os.path.isdir(config.trash_dir+"files/"):
+            for f in os.listdir(config.trash_dir+"files/"):
+                shutil.rmtree(config.trash_dir+"files/"+f)
+        if os.path.isdir(config.trash_dir+"info/"):
+            for f in os.listdir(config.trash_dir+"info/"):
+                shutil.rmtree(config.trash_dir+"info/"+f)
         self.finish("Trash deleted")
 
 
