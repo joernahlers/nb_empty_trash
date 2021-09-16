@@ -176,7 +176,6 @@ define([
             dataType: "text",
             url: utils.get_body_data('baseUrl') + 'metrics',
             success: function(data) {
-                displayDisk(data);
                 displayTrashButton(data);
         }});
     };
